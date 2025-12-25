@@ -251,7 +251,7 @@ public class PgfPlotBuilderTests
 			.SetColour(LatexColour.Bittersweet)
 			.SetMark(PlotMark.Circle)
 			.SetSmooth(true)
-			.AddPlot(Data1.Reverse())
+			.AddPlot(Data1.AsEnumerable().Reverse())
 			.SetBarWidth(1.2f)
 			.SetFillColour(LatexColour.Cerulean)
 			.SetFillOpacity(0.4f)
@@ -485,7 +485,7 @@ public class PgfPlotBuilderTests
 		PieChartSliceData<int> chartSliceTwo = new(10);
 		PieChartSliceData<int> chartSliceThree = new(15);
 		PieChartSliceData<int>[] slicesOne = { chartSliceOne, chartSliceTwo, chartSliceThree };
-		PieChartSliceData<int>[] slicesTwo = slicesOne.Reverse().ToArray();
+		PieChartSliceData<int>[] slicesTwo = slicesOne.AsEnumerable().Reverse().ToArray();
 
 		string res = _root.AddPgfPlot()
 			.AddPie(slicesOne)
