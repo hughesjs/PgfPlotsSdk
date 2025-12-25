@@ -30,6 +30,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="ArchonAnalysers" Version="0.3.0">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
       <PackageReference Include="SuperFluid" Version="0.3.0">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
