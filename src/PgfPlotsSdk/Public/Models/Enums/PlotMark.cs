@@ -4,7 +4,7 @@ namespace PgfPlotsSdk.Public.Models.Enums;
 
 public enum PlotMark
 {
-    [PgfPlotsKey("no")]
+    [PgfPlotsKey("none")]
     None,
     
     [PgfPlotsKey("*")]
