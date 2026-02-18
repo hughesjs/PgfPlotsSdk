@@ -4,6 +4,7 @@ namespace PgfPlotsSdk.Public.Models.Enums;
 
 // TODO - Handle these in options
 [Flags]
+[PgfPlotsFlagSeparator("")]
 public enum PositionFlags
 {
 	[PgfPlotsKey("h")]
