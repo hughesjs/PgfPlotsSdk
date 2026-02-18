@@ -42,8 +42,9 @@ internal abstract class SyntaxNode
         if (optionsNode is not null && child is OptionsCollectionNode optionsCollectionChild)
         {
             optionsNode.AddChildren(optionsCollectionChild.Children);
+            return;
         }
-        
+
         child.Parent = this;
         Children.Add(child);
     }
