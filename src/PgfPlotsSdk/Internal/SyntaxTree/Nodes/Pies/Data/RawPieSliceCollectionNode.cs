@@ -7,7 +7,10 @@ internal class RawPieSliceCollectionNode<T>: SyntaxNode where T : INumber<T>
 {
 	public RawPieSliceCollectionNode(params PieChartSliceData<T>[] data) // For instances where you've built a collection container already
 	{
-		Children.AddRange(data.Select(d => new RawSliceNode<T>(d)));
+		foreach (PieChartSliceData<T> d in data)
+		{
+			AddChild(new RawSliceNode<T>(d));
+		}
 	}
 
 	protected override string BeforeChildren => "{";

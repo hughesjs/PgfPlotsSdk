@@ -94,18 +94,12 @@ public abstract record OptionsDefinition
 
 	private string JoinFlags(Type dataType, Enum value)
 	{
-		StringBuilder builder = new();
 		string separator = dataType.GetCustomAttribute<PgfPlotsFlagSeparatorAttribute>()?.Separator ??
 		                   string.Empty;
-		foreach (var en in Enum.GetValues(dataType))
-		{
-			if (value.HasFlag((Enum)en))
-			{
-				string? valuePgfPlotKey = PgfPlotsAttributeHelper.GetPgfPlotsKey(dataType, en.ToString()!);
-				builder.Append($"{valuePgfPlotKey}{separator}");
-			}
-		}
-
-		return builder.ToString();
+		IEnumerable<string?> keys = Enum.GetValues(dataType)
+			.Cast<Enum>()
+			.Where(en => value.HasFlag(en))
+			.Select(en => PgfPlotsAttributeHelper.GetPgfPlotsKey(dataType, en.ToString()!));
+		return string.Join(separator, keys);
 	}
 }

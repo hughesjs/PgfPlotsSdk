@@ -6,6 +6,5 @@ namespace PgfPlotsSdk.Public.Models.Options;
 public record FigureOptions: OptionsDefinition
 {
 	[PgfPlotsValueOnly]
-	[PgfPlotsFlagSeparator("")]
 	public PositionFlags? Position { get; set; }
 }

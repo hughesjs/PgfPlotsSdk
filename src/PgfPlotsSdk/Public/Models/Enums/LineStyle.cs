@@ -24,4 +24,22 @@ public enum LineStyle
 
     [PgfPlotsKey("densely dashed")]
     DenselyDashed,
+
+    [PgfPlotsKey("dashdotted")]
+    DashDotted,
+
+    [PgfPlotsKey("loosely dashdotted")]
+    LooselyDashDotted,
+
+    [PgfPlotsKey("densely dashdotted")]
+    DenselyDashDotted,
+
+    [PgfPlotsKey("dashdotdotted")]
+    DashDotDotted,
+
+    [PgfPlotsKey("loosely dashdotdotted")]
+    LooselyDashDotDotted,
+
+    [PgfPlotsKey("densely dashdotdotted")]
+    DenselyDashDotDotted,
 }
