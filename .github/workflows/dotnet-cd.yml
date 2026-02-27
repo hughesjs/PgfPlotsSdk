@@ -49,12 +49,12 @@ jobs:
       - name: Create Nuget Package
         run: dotnet build -c Release ./src/PgfPlotsSdk/PgfPlotsSdk.csproj && dotnet pack -c Release -p:PackageVersion=${{ steps.tag_version.outputs.new_version }} -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -o . ./src/PgfPlotsSdk/PgfPlotsSdk.csproj
       - name: Upload Package for Publishing
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: PackedLib
           path: ./*.nupkg
       - name: Upload Symbols for Publishing
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: PackedSymbols
           path: ./*.snupkg
@@ -67,11 +67,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download built project
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: PackedLib
       - name: Download packed Symbols
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: PackedSymbols
       - name: Setup .NET
@@ -89,11 +89,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download built project
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: PackedLib
       - name: Download packed Symbols
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: PackedSymbols
       - name: Setup .NET
